@@ -1,0 +1,59 @@
+version: 2
+
+_def_node: &def_node
+  steps:
+    - checkout
+    - run:
+        name: Install Dependencies
+        command:  npm install
+    - run:
+        name: Generate Types
+        command:  npm run gen:gql
+    - run:
+        name: Lint
+        command:  npm run lint
+    - run:
+        name: Test
+        command:  npm run test
+    - run:
+        name: Build
+        command:  npx --package webpack-cli webpack --config webpack.prod.js
+    - run:
+        name: Preparing artifacts
+        command: |
+          mkdir -p /tmp/artifacts/assets
+          cp -r ~/project/dist/assets/ /tmp/artifacts
+          cp ~/project/dist/webpack-stats.html /tmp/artifacts
+    - store_artifacts:
+        path: /tmp/artifacts/assets
+        destination: assets
+    - store_artifacts:
+        path: /tmp/artifacts/webpack-stats.html
+        destination: webpack-report
+
+# =========
+#   Jobs
+# =========
+
+jobs:
+  Build:10:
+    docker:
+      - image: circleci/node:10
+    <<: *def_node
+  Build:12:
+    docker:
+      - image: circleci/node:12
+    <<: *def_node
+
+# =============
+#   Workflows
+# =============
+
+workflows:
+  version: 2
+  Node:10:
+    jobs:
+      - Build:10
+  Node:12:
+    jobs:
+      - Build:12

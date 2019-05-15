@@ -1,0 +1,19 @@
+schema: src/server/api/**/*.graphql.ts
+generates:
+  src/shared/__generated__/graphql/types-server.ts:
+    documents: src/server/api/**/*.graphql
+    plugins:
+      - "typescript"
+  src/shared/__generated__/graphql/types-client.tsx:
+    documents: src/client/**/*.graphql
+    plugins:
+      - "typescript"
+      - "typescript-operations"
+      - "typescript-react-apollo"
+    config:
+        withHOC: false
+        withComponent: false
+        withHooks: true
+        hooksImportFrom: 'react-apollo-hooks'
+        reactApolloImportFrom: 'react-apollo-hooks'
+overwrite: true

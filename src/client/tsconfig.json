@@ -1,0 +1,10 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "jsx": "react",
+    "sourceMap": true,
+    "outDir": "../../built/client",
+  },
+  "include": ["."],
+  "exclude": ["**/*.test.tsx", "**/*.snap.tsx"]
+}

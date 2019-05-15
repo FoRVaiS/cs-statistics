@@ -1,0 +1,9 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "jsx": "preserve",
+    "outDir": "../../built",
+  },
+  "include": [".", "../shared"],
+  "exclude": ["**/*.test.ts"]
+}

@@ -1,0 +1,6 @@
+/built
+/dist
+/node_modules
+
+.env
+__generated__
