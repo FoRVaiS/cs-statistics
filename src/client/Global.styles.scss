@@ -1,3 +1,30 @@
+$theme-background: #08081A;
+
+$theme-primary: #FF9900;
+$theme-secondary: complement($theme-primary);
+
+$theme-text: #E8E8E8;
+$theme-text--dark: #7A7A7A;
+
+$theme-success: #00C800;
+$theme-fail: #B40000;
+
+:root {
+    --theme-background: #{$theme-background};
+
+    --theme-primary: #{$theme-primary};
+    --theme-secondary: #{$theme-secondary};
+
+    --theme-text: #{$theme-text};
+    --theme-text--dark: #{$theme-text--dark};
+
+    --theme-success: #{$theme-success};
+    --theme-fail: #{$theme-fail};
+
+    --theme-interact: #{$theme-primary};
+    --theme-interact--disabled: #{$theme-text--dark};
+}
+
 * {
     margin: 0;
     padding: 0;
