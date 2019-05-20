@@ -31,3 +31,9 @@ $theme-fail: #B40000;
 
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
+
+body {
+    background-color: var(--theme-background);
+
+    color: var(--theme-text);
+}
