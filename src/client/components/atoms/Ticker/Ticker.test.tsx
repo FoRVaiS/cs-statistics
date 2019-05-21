@@ -15,3 +15,13 @@ describe('The title', (): any => {
         expect(ticker.getAttribute('data-title')).toBe('MyTitle');
     });
 });
+
+describe('The value', (): any => {
+    it('should display when ticker is given a value', async (): Promise<any> => {
+        const { findByTestId } = render(<Ticker title="" value={1234567890} />);
+
+        const ticker = await findByTestId('ticker');
+
+        expect(ticker.innerHTML).toBe('1234567890');
+    });
+});
