@@ -25,3 +25,27 @@ describe('The value', (): any => {
         expect(ticker.innerHTML).toBe('1234567890');
     });
 });
+
+describe('The value unit', (): any => {
+    describe('when given a symbol', (): any => {
+        describe('and a position of right', (): any => {
+            it('should display to the right value', async (): Promise<any> => {
+                const { findByTestId } = render(<Ticker title="" value={1234567890} unit={{ position: 'right', symbol: '%' }} />);
+
+                const ticker = await findByTestId('ticker');
+
+                expect(ticker.innerHTML).toBe('1234567890%');
+            });
+        });
+
+        describe('and a position of left', (): any => {
+            it('should display to the left value', async (): Promise<any> => {
+                const { findByTestId } = render(<Ticker title="" value={1234567890} unit={{ position: 'left', symbol: '$' }} />);
+
+                const ticker = await findByTestId('ticker');
+
+                expect(ticker.innerHTML).toBe('$1234567890');
+            });
+        });
+    });
+});
