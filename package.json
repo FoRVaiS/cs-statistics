@@ -16,6 +16,7 @@
     "apollo-client": "^2.5.1",
     "apollo-link-http": "^1.5.14",
     "apollo-server-express": "^2.4.8",
+    "axios": "^0.18.0",
     "chalk": "^2.4.2",
     "ejs": "^2.6.1",
     "express": "^4.16.4",
