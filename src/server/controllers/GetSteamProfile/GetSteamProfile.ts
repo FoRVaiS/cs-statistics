@@ -51,5 +51,12 @@ export default async (id: string): Promise<ISteamProfile> => {
         steam64 = resolveVanityData.steamid;
     }
 
-    return { };
+    const { data: { response: steamProfileData } } = await axios.get('https://api.steampowered.com/ISteamUser/GetPlayerSummaries/v2/', {
+        params: {
+            key: process.env.STEAMWEB_API_KEY,
+            steamids: steam64,
+        },
+    });
+
+    return steamProfileData.players[0] as ISteamProfile;
 };
