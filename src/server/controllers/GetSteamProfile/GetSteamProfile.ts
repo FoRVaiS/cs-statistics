@@ -1,3 +1,7 @@
+import { UserInputError } from 'apollo-server-express';
+
+import SteamID from 'steamid';
+
 interface ISteamProfile {
     [key: string]: number | string | undefined
 
@@ -23,3 +27,13 @@ interface ISteamProfile {
     steamid: string
     timecreated?: string
 }
+
+export default async (id: string): Promise<ISteamProfile> => {
+    const sid = new SteamID(id);
+
+    if (!sid.isValid()) throw new UserInputError(`"${id}" is not a valid Steam64 ID`);
+
+    const steam64 = sid.getSteamID64();
+
+    return { };
+};
