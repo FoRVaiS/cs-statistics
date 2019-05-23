@@ -1,5 +1,6 @@
 import { UserInputError } from 'apollo-server-express';
 
+import axios from 'axios';
 import SteamID from 'steamid';
 
 interface ISteamProfile {
@@ -29,11 +30,26 @@ interface ISteamProfile {
 }
 
 export default async (id: string): Promise<ISteamProfile> => {
-    const sid = new SteamID(id);
+    let steam64 = null;
 
-    if (!sid.isValid()) throw new UserInputError(`"${id}" is not a valid Steam64 ID`);
+    try {
+        const sid = new SteamID(id);
 
-    const steam64 = sid.getSteamID64();
+        if (!sid.isValid()) throw new UserInputError(`"${id}" is not a valid Steam64 ID`);
+
+        steam64 = sid.getSteamID64();
+    } catch {
+        const { data: { response: resolveVanityData } } = await axios.get('https://api.steampowered.com/ISteamUser/ResolveVanityURL/v1/', {
+            params: {
+                key: process.env.STEAMWEB_API_KEY,
+                vanityurl: id,
+            },
+        });
+
+        if (resolveVanityData.success !== 1) throw new UserInputError(`"${id}" is not a valid custom url`);
+
+        steam64 = resolveVanityData.steamid;
+    }
 
     return { };
 };
