@@ -20,6 +20,6 @@ describe('The picture', (): void => {
 
         const portrait = await findByTestId('portrait');
 
-        expect(portrait.getAttribute('alt')).toBe("Player's profile picture");
+        expect(portrait.getAttribute('alt')).toBe('Player');
     });
 });
