@@ -23,3 +23,13 @@ describe('The picture', (): void => {
         expect(portrait.getAttribute('alt')).toBe('Player');
     });
 });
+
+describe('The name', (): void => {
+    it('should be set to the name prop', async (): Promise<void> => {
+        const { findByTestId } = render(<Portrait src="" name="Player" />);
+
+        const portraitName = await findByTestId('name');
+
+        expect(portraitName.innerHTML).toBe('Player');
+    });
+});
