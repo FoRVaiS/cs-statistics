@@ -8,7 +8,7 @@ afterEach(cleanup);
 
 describe('The picture', (): void => {
     it('should be given the correct image src', async (): Promise<void> => {
-        const { findByTestId } = render(<Portrait src="path/to/image" playerName="" />);
+        const { findByTestId } = render(<Portrait src="path/to/image" name="" />);
 
         const portrait = await findByTestId('portrait');
 
@@ -16,7 +16,7 @@ describe('The picture', (): void => {
     });
 
     it('should set the alt attribute', async (): Promise<void> => {
-        const { findByTestId } = render(<Portrait src="path/to/image" playerName="Player" />);
+        const { findByTestId } = render(<Portrait src="path/to/image" name="Player" />);
 
         const portrait = await findByTestId('portrait');
 

@@ -5,10 +5,10 @@ import './Portrait.styles.scss';
 
 const Portrait: React.FC<{
     src: string
-    playerName: string
-}> = ({ src, playerName }): React.ReactElement => (
+    name: string
+}> = ({ src, name }): React.ReactElement => (
     <div className="portrait">
-        <img src={src} alt={playerName} className="portrait__img" data-testid="portrait" />
+        <img src={src} alt={name} className="portrait__img" data-testid="portrait" />
     </div>
 );
 
