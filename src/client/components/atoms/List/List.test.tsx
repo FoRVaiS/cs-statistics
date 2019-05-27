@@ -15,6 +15,11 @@ describe('The list', (): void => {
                     'Category B',
                     'Category C',
                 ]}
+                data={[
+                    {
+                        _: 0,
+                    },
+                ]}
             />,
         );
 
@@ -28,6 +33,37 @@ describe('The list', (): void => {
             'Category A',
             'Category B',
             'Category C',
+        ]);
+    });
+});
+
+describe('The data', (): void => {
+    it('should render under their respective categories', (): void => {
+        const { container } = render(
+            <List
+                categories={[
+                    'Category A',
+                    'Category B',
+                    'Category C',
+                ]}
+                data={[
+                    {
+                        'Category A': 'String A',
+                        'Category B': 0,
+                        'Category C': 'String C',
+                    },
+                ]}
+            />,
+        );
+
+        const itemData = Array.from(container.querySelectorAll('.list__row')).map((item: Element): string[] => {
+            const children: Element[] = Array.from(item.children);
+
+            return children.map((dataCell): string => dataCell.innerHTML);
+        });
+
+        expect(itemData).toStrictEqual([
+            ['String A', '0', 'String C'],
         ]);
     });
 });

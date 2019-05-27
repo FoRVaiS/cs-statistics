@@ -5,13 +5,23 @@ import './List.styles.scss';
 
 const List: React.FC<{
     categories: string[]
-}> = ({ categories }): React.ReactElement => (
+    data: { [key: string]: number | string }[],
+}> = ({ categories, data }): React.ReactElement => (
     <table className="list">
         <thead>
             <tr>
                 {categories.map((category, index): any => <th className="list__category" key={`list-category-${index}`}>{category}</th>)}
             </tr>
         </thead>
+        <tbody>
+            {data.map((cellData, rowIndex): any => (
+                <tr className="list__row" key={`list-row-${rowIndex}`}>
+                    {categories.map((category, itemIndex): any => (
+                        <td className="list__item" key={`list-row-${rowIndex}-item-${itemIndex}`}>{cellData[category]}</td>
+                    ))}
+                </tr>
+            ))}
+        </tbody>
     </table>
 );
 
