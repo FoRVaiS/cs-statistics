@@ -67,3 +67,27 @@ describe('The data', (): void => {
         ]);
     });
 });
+
+describe('The list row', (): void => {
+    it('should not render when missing data for one or more categories', (): void => {
+        const { container } = render(
+            <List
+                categories={[
+                    'Category A',
+                    'Category B',
+                ]}
+                data={[
+                    {
+                        'Category A': 0,
+                    },
+                ]}
+            />,
+        );
+
+        const selector = container.querySelector('.list > tbody') as Element;
+
+        const listRows = Array.from(selector.children).length;
+
+        expect(listRows).toBe(0);
+    });
+});
