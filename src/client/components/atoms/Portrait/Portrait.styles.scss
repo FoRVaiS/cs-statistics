@@ -1,0 +1,34 @@
+$gutter: 1rem;
+$name-scale: 2rem;
+
+@font-face {
+    font-family: 'Roboto';
+    src: url(../../../fonts/Roboto/Roboto-Regular.ttf);
+}
+
+.portrait {
+    display: inline-flex;
+
+    flex-direction: column;
+    place-items: center center;
+
+    max-width: 100%;
+    min-width: 6.25rem;
+
+    padding: $gutter;
+
+    &__img {
+        min-width: calc(6.25rem);
+        max-width: 100%;
+
+        border-radius: 50%;
+    }
+
+    &__name {
+        margin-top: $gutter;
+
+        font-family: 'Roboto', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: $name-scale;
+        color: var(--theme-text);
+    }
+}
