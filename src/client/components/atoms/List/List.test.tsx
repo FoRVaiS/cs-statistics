@@ -101,7 +101,7 @@ describe('The list row', (): void => {
                 />,
             );
 
-            const selector = container.querySelector('.list > tbody') as Element;
+            const selector = container.querySelector('.list__body') as Element;
 
             const listRows = Array.from(selector.children).length;
 
