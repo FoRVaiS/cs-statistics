@@ -8,8 +8,8 @@ const Portrait: React.FC<{
     name: string
 }> = ({ src, name }): React.ReactElement => (
     <div className="portrait">
-        <img src={src} alt={name} className="portrait__img" data-testid="portrait" />
-        <p className="portrait__name" data-testid="name">{name}</p>
+        <img src={src} alt={name} className="portrait__img" />
+        <p className="portrait__name">{name}</p>
     </div>
 );
 
