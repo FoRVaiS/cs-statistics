@@ -67,7 +67,7 @@ describe('The data', (): void => {
             />,
         );
 
-        const itemData = Array.from(container.querySelectorAll('.list__row')).map((item: Element): string[] => {
+        const itemData = Array.from(container.querySelectorAll('.list__body > .list__row')).map((item: Element): string[] => {
             const children: Element[] = Array.from(item.children);
 
             return children.map((dataCell): string => dataCell.innerHTML);
