@@ -8,13 +8,13 @@ const List: React.FC<{
     categories: string[]
     data: { [key: string]: number | string }[],
 }> = ({ categories, data }): React.ReactElement => (
-    <table className="list">
-        <thead>
-            <tr>
-                {categories.map((category, index): any => <th className="list__category" key={`list-category-${index}`}>{category}</th>)}
-            </tr>
-        </thead>
-        <tbody>
+    <div className="list">
+        <div className="list__head">
+            <div>
+                {categories.map((category, index): any => <span className="list__category" key={`list-category-${index}`}>{category}</span>)}
+            </div>
+        </div>
+        <div className="list__body">
             {data.map((cellData, rowIndex): any => {
                 const isDataComplete = !categories.map((category): boolean => {
                     const dataCategories = Object.keys(cellData);
@@ -29,15 +29,15 @@ const List: React.FC<{
                 }
 
                 return (
-                    <tr className="list__row" key={`list-row-${rowIndex}`}>
+                    <div className="list__row" key={`list-row-${rowIndex}`}>
                         {categories.map((category, itemIndex): any => (
-                            <td className="list__item" key={`list-row-${rowIndex}-item-${itemIndex}`}>{cellData[category]}</td>
+                            <span className="list__item" key={`list-row-${rowIndex}-item-${itemIndex}`}>{cellData[category]}</span>
                         ))}
-                    </tr>
+                    </div>
                 );
             })}
-        </tbody>
-    </table>
+        </div>
+    </div>
 );
 
 export default List;
