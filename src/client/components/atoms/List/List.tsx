@@ -19,7 +19,7 @@ const List: React.FC<{
                 const isDataComplete = !categories.map((category): boolean => {
                     const dataCategories = Object.keys(cellData);
 
-                    return dataCategories.includes(category) && !!cellData[category];
+                    return dataCategories.includes(category) && cellData[category] !== '';
                 })
                     .includes(false);
 
