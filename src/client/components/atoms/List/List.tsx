@@ -16,8 +16,11 @@ const List: React.FC<{
         </thead>
         <tbody>
             {data.map((cellData, rowIndex): any => {
-                const isDataComplete = !categories.map((category): boolean => Object.keys(cellData)
-                    .includes(category))
+                const isDataComplete = !categories.map((category): boolean => {
+                    const dataCategories = Object.keys(cellData);
+
+                    return dataCategories.includes(category) && !!cellData[category];
+                })
                     .includes(false);
 
                 if (!isDataComplete) {
