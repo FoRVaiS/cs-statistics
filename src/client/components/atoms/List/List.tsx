@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 /* eslint-disable react/no-array-index-key */
 import React from 'react';
 
@@ -19,7 +20,10 @@ const List: React.FC<{
                     .includes(category))
                     .includes(false);
 
-                if (!isDataComplete) return null;
+                if (!isDataComplete) {
+                    console.error(`Incomplete data at index ${rowIndex}`);
+                    return null;
+                }
 
                 return (
                     <tr className="list__row" key={`list-row-${rowIndex}`}>

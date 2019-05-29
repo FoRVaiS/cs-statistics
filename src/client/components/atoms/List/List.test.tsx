@@ -1,13 +1,24 @@
+/* eslint-disable no-console */
 import React from 'react';
 
 import { render, cleanup } from 'react-testing-library';
 
 import List from './List';
 
+const originalConsole = { ...console };
+
 afterEach(cleanup);
+
+beforeEach((): void => {
+    global.console.error = originalConsole.error;
+    console.error = originalConsole.error;
+});
 
 describe('The list', (): void => {
     it('should render categories when given a list of accepted categories', (): void => {
+        console.error = (): void => { };
+        global.console.error = jest.fn();
+
         const { container } = render(
             <List
                 categories={[
@@ -69,25 +80,54 @@ describe('The data', (): void => {
 });
 
 describe('The list row', (): void => {
-    it('should not render when missing data for one or more categories', (): void => {
-        const { container } = render(
-            <List
-                categories={[
-                    'Category A',
-                    'Category B',
-                ]}
-                data={[
-                    {
-                        'Category A': 0,
-                    },
-                ]}
-            />,
-        );
+    beforeEach((): void => {
+        console.error = (): void => { };
+        global.console.error = jest.fn();
+    });
 
-        const selector = container.querySelector('.list > tbody') as Element;
+    describe('when missing data for one or more categories', (): void => {
+        it('should not render', (): void => {
+            const { container } = render(
+                <List
+                    categories={[
+                        'Category A',
+                        'Category B',
+                    ]}
+                    data={[
+                        {
+                            'Category A': 0,
+                        },
+                    ]}
+                />,
+            );
 
-        const listRows = Array.from(selector.children).length;
+            const selector = container.querySelector('.list > tbody') as Element;
 
-        expect(listRows).toBe(0);
+            const listRows = Array.from(selector.children).length;
+
+            expect(listRows).toBe(0);
+        });
+
+        it('should report to user about incomplete data', (): void => {
+            render(
+                <List
+                    categories={[
+                        'Category A',
+                        'Category B',
+                    ]}
+                    data={[
+                        {
+                            'Category A': 0,
+                            'Category B': 0,
+                        },
+                        {
+                            'Category A': 0,
+                        },
+                    ]}
+                />,
+            );
+
+            expect(global.console.error).toHaveBeenCalledWith('Incomplete data at index 1');
+        });
     });
 });
