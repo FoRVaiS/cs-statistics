@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
 import React from 'react';
 
 import { render, cleanup } from 'react-testing-library';
@@ -12,7 +13,7 @@ describe('The title', (): any => {
 
         const ticker = await container.querySelector('.ticker');
 
-        expect(ticker.getAttribute('data-title')).toBe('MyTitle');
+        expect(ticker!.getAttribute('data-title')).toBe('MyTitle');
     });
 });
 
@@ -22,7 +23,7 @@ describe('The value', (): any => {
 
         const ticker = await container.querySelector('.ticker');
 
-        expect(ticker.innerHTML).toBe('1234567890');
+        expect(ticker!.innerHTML).toBe('1234567890');
     });
 });
 
@@ -34,7 +35,7 @@ describe('The value unit', (): any => {
 
                 const ticker = await container.querySelector('.ticker');
 
-                expect(ticker.innerHTML).toBe('1234567890%');
+                expect(ticker!.innerHTML).toBe('1234567890%');
             });
         });
 
@@ -44,7 +45,7 @@ describe('The value unit', (): any => {
 
                 const ticker = await container.querySelector('.ticker');
 
-                expect(ticker.innerHTML).toBe('$1234567890');
+                expect(ticker!.innerHTML).toBe('$1234567890');
             });
         });
     });
