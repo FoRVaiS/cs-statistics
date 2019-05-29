@@ -10,7 +10,7 @@ const Ticker: React.FC<{
         symbol: string
     }
 }> = ({ title, value, unit = { position: 'left', symbol: '' } }): React.ReactElement => (
-    <p className="ticker" data-title={title} data-testid="ticker">
+    <p className="ticker" data-title={title}>
         {
             unit.position === 'left'
                 ? unit.symbol + value
