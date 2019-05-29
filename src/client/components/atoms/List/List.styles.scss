@@ -1,0 +1,34 @@
+.list {
+    display: grid;
+
+    &__head {
+        font-size: 1.25rem;
+
+        padding-bottom: 0.25rem;
+
+        border-bottom: 1px solid #CCCCCC;
+    }
+
+    &__row {
+        display: flex;
+
+        padding: 0.25rem;
+    }
+
+    &__head > &__row {
+        padding-bottom: 0;
+    }
+
+    &__body > &__row:nth-child(odd) {
+        background-color: rgba(white, 0.1);
+    }
+
+    &__category {
+        white-space: nowrap;
+    }
+
+    &__item,
+    &__category {
+        flex: 1;
+    }
+}
