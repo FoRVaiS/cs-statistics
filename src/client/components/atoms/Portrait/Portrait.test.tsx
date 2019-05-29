@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
 import React from 'react';
 
 import { render, cleanup } from 'react-testing-library';
@@ -12,7 +13,7 @@ describe('The picture', (): void => {
 
         const portrait = await container.querySelector('.portrait__img');
 
-        expect(portrait.getAttribute('src')).toBe('path/to/image');
+        expect(portrait!.getAttribute('src')).toBe('path/to/image');
     });
 
     it('should set the alt attribute', async (): Promise<void> => {
@@ -20,7 +21,7 @@ describe('The picture', (): void => {
 
         const portrait = await container.querySelector('.portrait__img');
 
-        expect(portrait.getAttribute('alt')).toBe('Player');
+        expect(portrait!.getAttribute('alt')).toBe('Player');
     });
 });
 
@@ -30,6 +31,6 @@ describe('The name', (): void => {
 
         const portraitName = await container.querySelector('.portrait__name');
 
-        expect(portraitName.innerHTML).toBe('Player');
+        expect(portraitName!.innerHTML).toBe('Player');
     });
 });
