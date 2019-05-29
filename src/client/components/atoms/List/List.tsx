@@ -10,7 +10,7 @@ const List: React.FC<{
 }> = ({ categories, data }): React.ReactElement => (
     <div className="list">
         <div className="list__head">
-            <div>
+            <div className="list__row">
                 {categories.map((category, index): any => <span className="list__category" key={`list-category-${index}`}>{category}</span>)}
             </div>
         </div>
