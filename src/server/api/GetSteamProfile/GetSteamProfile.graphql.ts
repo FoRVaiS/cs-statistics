@@ -26,6 +26,6 @@ export default gql`
     }
 
     type Query {
-        GetSteamProfile(id: String!): SteamProfile
+        SteamProfile(id: String!): SteamProfile
     }
 `;

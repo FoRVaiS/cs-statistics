@@ -19,7 +19,7 @@ export default makeExecutableSchema({
     typeDefs,
     resolvers: {
         Query: {
-            GetSteamProfile: async (_, { id }: QueryGetSteamProfileArgs): Promise<SteamProfile> => {
+            SteamProfile: async (_, { id }: QueryGetSteamProfileArgs): Promise<SteamProfile> => {
                 if (isdev) throw new DevModeError('Steam Profile queries not permitted in development mode');
 
                 return GetSteamProfileController(id);
