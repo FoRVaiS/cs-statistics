@@ -133,7 +133,7 @@
     "_TMPL:build:tsc": "tsc --project src/server/tsconfig.json",
     "_TMPL:start": "node -r dotenv/config .",
     "build:prod": "npm run _TMPL:build && webpack --config webpack.prod.js",
-    "clean": "rimraf built/ dist/ src/shared/__generated__/",
+    "clean": "rimraf built/ dist/ src/__generated__/",
     "commit": "npm run lint && git-cz",
     "gen:gql": "graphql-codegen --config codegen.yml",
     "lint": "eslint --ext .ts --ext .tsx src --fix && stylelint src/client",
