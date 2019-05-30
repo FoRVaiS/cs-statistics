@@ -54,6 +54,9 @@ beforeEach((): void => {
 });
 
 describe('The controller', (): void => {
+    // Had trouble trying to mock the SteamID class
+    it.todo('should verify steam64 ids');
+
     it('should resolve vanity urls', async (): Promise<void> => {
         await GetSteamProfile('vanity');
 
