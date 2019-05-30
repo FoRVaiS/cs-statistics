@@ -24,7 +24,7 @@ const assets: string = path.join(webRoot, 'assets');
 
 (async (): Promise<void> => {
     try {
-        const address: string = process.env.ADDRESS || 'localhost';
+        const host: string = process.env.HOST || 'localhost';
         const port: number = await portfinder.getPortPromise({ port: parseInt(process.env.PORT || '8080', 10) });
 
         const URI = process.env.MONGODB_URI || '';
@@ -67,14 +67,14 @@ const assets: string = path.join(webRoot, 'assets');
             res.render('index');
         });
 
-        app.listen(port, address, (err: Error): void => {
+        app.listen(port, host, (err: Error): void => {
             if (err) throw err;
 
             const secure = false;
             const protocol: string = `http${secure ? 's' : ''}`;
-            const authority: string = address + (port !== 80 ? `:${port}` : '');
+            const authority: string = host + (port !== 80 ? `:${port}` : '');
 
-            if (!process.env.ADDRESS) logger.warn("Environment variable 'ADDRESS' is undefined, defaulting to 'localhost'");
+            if (!process.env.HOST) logger.warn("Environment variable 'HOST' is undefined, defaulting to 'localhost'");
             if (!process.env.PORT) logger.warn("Environment variable 'PORT' is undefined, defaulting to 8080 if available");
             if (isdev) logger.warn(`Running application in ${chalk.yellow('DEVELOPMENT')} mode`);
             logger.success(`Hosting on ${protocol}://${authority}/`);
