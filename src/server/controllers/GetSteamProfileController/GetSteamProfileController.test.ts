@@ -49,7 +49,7 @@ beforeEach((): void => {
             });
         }
 
-        return null;
+        return Promise.resolve(null);
     });
 });
 
