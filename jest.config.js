@@ -13,6 +13,7 @@ module.exports = {
     moduleNameMapper: {
         '\\.s?css$': 'identity-obj-proxy',
         'generated/(.*)': '<rootDir>/src/__generated__/$1',
+        'utilities/(.*)': '<rootDir>/src/utilities/$1',
     },
     snapshotResolver: './jest.snapshot',
 };
