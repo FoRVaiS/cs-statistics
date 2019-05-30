@@ -15,5 +15,6 @@ module.exports = {
         'react/prop-types': [0],
         'react/jsx-filename-extension': [0],
         'react/jsx-one-expression-per-line': [0],
+        'react/no-array-index-key': [1],
     }
 }

@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
-
 const ExtractTextPlugin = require('mini-css-extract-plugin');
 const Uglify = require('uglifyjs-webpack-plugin');
 const Compression = require('compression-webpack-plugin');

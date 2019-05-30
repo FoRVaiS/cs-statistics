@@ -26,6 +26,7 @@ module.exports = {
         'indent': [1, 4, {
             SwitchCase: 1,
         }],
+        'no-console': [0],
 
         'import/prefer-default-export': [0],
         'import/no-extraneous-dependencies': [0],
@@ -35,6 +36,15 @@ module.exports = {
         }],
 
         '@typescript-eslint/interface-name-prefix': [0],
-        '@typescript-eslint/no-explicit-any': [0]
+        '@typescript-eslint/no-explicit-any': [0],
+        '@typescript-eslint/no-non-null-assertion': [0]
     },
+    overrides: [
+        {
+            files: "**/*.js",
+            rules: {
+                "@typescript-eslint/no-var-requires": [0]
+            }
+        }
+    ]
 }
