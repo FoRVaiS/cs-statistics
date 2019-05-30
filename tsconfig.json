@@ -9,7 +9,8 @@
         "noImplicitAny": true,
         "baseUrl": "src",
         "paths": {
-            "generated/*": [ "__generated__/*" ]
+            "generated/*": [ "__generated__/*" ],
+            "utilities/*": [ "utilities/*" ]
         }
     }
 }
