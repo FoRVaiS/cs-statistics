@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import GetSteamProfile from './GetSteamProfileController';
+import SteamProfileController from './SteamProfileController';
 
 jest.mock('axios');
 
@@ -58,7 +58,7 @@ describe('The controller', (): void => {
     it.todo('should verify steam64 ids');
 
     it('should resolve vanity urls', async (): Promise<void> => {
-        await GetSteamProfile('vanity');
+        await SteamProfileController('vanity');
 
         expect(fakeAxios.get).toBeCalledWith('https://api.steampowered.com/ISteamUser/ResolveVanityURL/v1/', {
             params: {
@@ -69,7 +69,7 @@ describe('The controller', (): void => {
     });
 
     it('should fetch a player profile', async (): Promise<void> => {
-        await GetSteamProfile('76561197960434622');
+        await SteamProfileController('76561197960434622');
 
         expect(fakeAxios.get).toBeCalledWith('https://api.steampowered.com/ISteamUser/GetPlayerSummaries/v2/', {
             params: {
