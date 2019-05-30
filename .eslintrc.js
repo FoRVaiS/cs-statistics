@@ -26,6 +26,7 @@ module.exports = {
         'indent': [1, 4, {
             SwitchCase: 1,
         }],
+        'no-console': [0],
 
         'import/prefer-default-export': [0],
         'import/no-extraneous-dependencies': [0],
