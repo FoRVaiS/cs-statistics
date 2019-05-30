@@ -1,6 +1,6 @@
 import { makeExecutableSchema, ApolloError } from 'apollo-server-express';
 
-import { SteamProfile, QueryGetSteamProfileArgs } from 'generated/graphql/types-server';
+import { SteamProfile, QuerySteamProfileArgs } from 'generated/graphql/types-server';
 import isdev from 'isdev';
 
 import GetSteamProfileController from '../../controllers/GetSteamProfileController/GetSteamProfileController';
@@ -19,7 +19,7 @@ export default makeExecutableSchema({
     typeDefs,
     resolvers: {
         Query: {
-            SteamProfile: async (_, { id }: QueryGetSteamProfileArgs): Promise<SteamProfile> => {
+            SteamProfile: async (_, { id }: QuerySteamProfileArgs): Promise<SteamProfile> => {
                 if (isdev) throw new DevModeError('Steam Profile queries not permitted in development mode');
 
                 return GetSteamProfileController(id);
