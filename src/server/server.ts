@@ -13,7 +13,6 @@ import isdev from 'isdev';
 import chalk from 'chalk';
 
 import HMR from './components/webpack/HotModuleReplacement';
-import dbConnect from './components/database/connect';
 import logger from '../utilities/logger/logger';
 import api from './api';
 
@@ -27,11 +26,15 @@ const assets: string = path.join(webRoot, 'assets');
     try {
         const address: string = process.env.ADDRESS || 'localhost';
         const port: number = await portfinder.getPortPromise({ port: parseInt(process.env.PORT || '8080', 10) });
-        const database: mongoose.Connection = await dbConnect({
-            URI: process.env.MONGODB_URI || '',
-            DB: (isdev ? `${process.env.MONGODB_DATABASE}-dev` : process.env.MONGODB_DATABASE) || '',
-            USER: process.env.MONGODB_USER || '',
-            PASS: process.env.MONGODB_PASS || '',
+
+        const URI = process.env.MONGODB_URI || '';
+        const DB = (isdev ? `${process.env.MONGODB_DATABASE}-dev` : process.env.MONGODB_DATABASE) || '';
+
+        const database: mongoose.Connection = await mongoose.createConnection(`mongodb://${URI}/${DB}`, {
+            useNewUrlParser: true,
+            user: process.env.MONGODB_USER || '',
+            pass: process.env.MONGODB_PASS || '',
+            authSource: 'admin',
         });
 
         const Book = database.model('books', new mongoose.Schema({
