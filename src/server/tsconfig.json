@@ -4,6 +4,6 @@
     "jsx": "preserve",
     "outDir": "../../built",
   },
-  "include": [".", "../shared"],
+  "include": [".", "../shared", "../utilities"],
   "exclude": ["**/*.test.ts"]
 }

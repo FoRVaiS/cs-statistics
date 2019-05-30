@@ -10,7 +10,7 @@ import { InMemoryCache } from 'apollo-cache-inmemory';
 import 'normalize.css';
 import './Global.styles.scss';
 
-import Home from './domains/Home/Home';
+import Home from './pages/Home/Home';
 
 const client = new ApolloClient({
     link: new HttpLink(),

@@ -1,6 +1,6 @@
 import { makeExecutableSchema, ApolloError } from 'apollo-server-express';
 
-import { SteamProfile, QueryGetSteamProfileArgs } from 'shared/__generated__/graphql/types-server';
+import { SteamProfile, QueryGetSteamProfileArgs } from 'generated/graphql/types-server';
 import isdev from 'isdev';
 
 import GetSteamProfileController from '../../controllers/GetSteamProfileController/GetSteamProfileController';

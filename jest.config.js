@@ -12,7 +12,7 @@ module.exports = {
     verbose: true,
     moduleNameMapper: {
         '\\.s?css$': 'identity-obj-proxy',
-        'shared/(.*)': '<rootDir>/src/shared/$1',
+        'generated/(.*)': '<rootDir>/src/__generated__/$1',
     },
     snapshotResolver: './jest.snapshot',
 };

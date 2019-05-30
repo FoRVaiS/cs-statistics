@@ -14,7 +14,7 @@ import chalk from 'chalk';
 
 import HMR from './components/webpack/HotModuleReplacement';
 import dbConnect from './components/database/connect';
-import logger from './components/logger/logger';
+import logger from '../utilities/logger/logger';
 import api from './api';
 
 const app: express.Express = express();
