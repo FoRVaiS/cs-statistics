@@ -1,9 +1,9 @@
 import { mergeSchemas } from 'graphql-tools';
 
-import GetSteamProfile from './GetSteamProfile/GetSteamProfile';
+import SteamProfile from './SteamProfile/SteamProfile';
 
 export default mergeSchemas({
     schemas: [
-        GetSteamProfile,
+        SteamProfile,
     ],
 });

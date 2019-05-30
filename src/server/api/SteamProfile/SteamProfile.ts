@@ -5,7 +5,7 @@ import isdev from 'isdev';
 
 import GetSteamProfileController from '../../controllers/GetSteamProfileController/GetSteamProfileController';
 
-import typeDefs from './GetSteamProfile.graphql';
+import typeDefs from './SteamProfile.graphql';
 
 class DevModeError extends ApolloError {
     public constructor(message: string, properties?: Record<string, any>) {
