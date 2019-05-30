@@ -1,6 +1,5 @@
 module.exports = {
     env: {
-        browser: true,
         node: true,
         es6: true,
         jest: true,
@@ -8,7 +7,7 @@ module.exports = {
     parser: '@typescript-eslint/parser',
     plugins: [
         '@typescript-eslint',
-        'import', 'react', 'jsx-a11y'
+        'import',
     ],
     extends: [
         'eslint:recommended',
@@ -34,12 +33,6 @@ module.exports = {
             ts: 'never',
             tsx: 'never',
         }],
-
-        'react/jsx-indent': [2, 4],
-        'react/jsx-indent-props': [2, 4],
-        'react/prop-types': [0],
-        'react/jsx-filename-extension': [0],
-        'react/jsx-one-expression-per-line': [0],
 
         '@typescript-eslint/interface-name-prefix': [0],
         '@typescript-eslint/no-explicit-any': [0]
