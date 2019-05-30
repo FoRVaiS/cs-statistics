@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
-
 const Autoprefixer = require('autoprefixer');
 const Prettier = require('postcss-prettify');
 

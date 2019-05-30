@@ -39,4 +39,12 @@ module.exports = {
         '@typescript-eslint/no-explicit-any': [0],
         '@typescript-eslint/no-non-null-assertion': [0]
     },
+    overrides: [
+        {
+            files: "**/*.js",
+            rules: {
+                "@typescript-eslint/no-var-requires": [0]
+            }
+        }
+    ]
 }
