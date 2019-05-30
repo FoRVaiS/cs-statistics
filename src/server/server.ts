@@ -37,15 +37,6 @@ const assets: string = path.join(webRoot, 'assets');
             authSource: 'admin',
         });
 
-        const Book = database.model('books', new mongoose.Schema({
-            title: String,
-        }));
-
-        (new Book({
-            title: 'Teddy',
-        })).save();
-
-
         app.use(helmet());
         app.use('/assets', (...data): void => {
             const [, res] = data;
