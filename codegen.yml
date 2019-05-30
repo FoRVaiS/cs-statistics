@@ -1,10 +1,10 @@
 schema: src/server/api/**/*.graphql.ts
 generates:
-  src/shared/__generated__/graphql/types-server.ts:
+  src/__generated__/graphql/types-server.ts:
     documents: src/server/api/**/*.graphql
     plugins:
       - "typescript"
-  src/shared/__generated__/graphql/types-client.tsx:
+  src/__generated__/graphql/types-client.tsx:
     documents: src/client/**/*.graphql
     plugins:
       - "typescript"
