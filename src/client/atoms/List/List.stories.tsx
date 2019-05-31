@@ -27,7 +27,7 @@ const data = [
     },
 ];
 
-storiesOf('List', module)
+storiesOf('Atoms|List', module)
     .add('displays data under their corresponding columns', (): any => (
         <List
             categories={[

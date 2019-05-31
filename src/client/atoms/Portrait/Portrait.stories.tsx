@@ -5,7 +5,7 @@ import { withKnobs, text } from '@storybook/addon-knobs';
 
 import Portrait from './Portrait';
 
-storiesOf('Portrait', module)
+storiesOf('Atoms|Portrait', module)
     .addDecorator(withKnobs)
     .add('renders a picture with text', (): any => (
         <Portrait

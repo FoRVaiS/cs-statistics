@@ -7,7 +7,7 @@ import {
 
 import Ticker from './Ticker';
 
-storiesOf('Ticker', module)
+storiesOf('Atoms|Ticker', module)
     .addDecorator(withKnobs)
     .add('renders a numerical value with text describing the value', (): any => (
         <Ticker title={text('Title', 'Title')} value={number('Value', 1234657890)} />
