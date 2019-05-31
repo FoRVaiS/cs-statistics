@@ -1,28 +1,21 @@
-$gutter: 1rem;
-$name-scale: 2rem;
-
 .portrait {
     display: inline-flex;
 
     flex-direction: column;
     place-items: center center;
 
-    max-width: 100%;
-    min-width: 6.25rem;
-
-    padding: $gutter;
+    width: var(--portrait-p-width, 100%);
 
     &__img {
-        min-width: calc(6.25rem);
-        max-width: 100%;
+        width: var(--portrait__img-p-width, 100%);
 
         border-radius: 50%;
     }
 
     &__name {
-        margin-top: $gutter;
+        margin-top: var(--portrait-p-spacing, 1rem);
 
-        font-size: $name-scale;
-        color: var(--theme-text);
+        font-size: var(--portrait__name-p-size, var(--font-size-5));
+        color: var(--portrait__name-p-color, var(--theme-text));
     }
 }
