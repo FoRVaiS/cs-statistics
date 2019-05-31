@@ -22,7 +22,6 @@ $name-scale: 2rem;
     &__name {
         margin-top: $gutter;
 
-        font-family: 'Roboto', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         font-size: $name-scale;
         color: var(--theme-text);
     }
