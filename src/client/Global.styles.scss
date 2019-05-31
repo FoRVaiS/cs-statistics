@@ -43,7 +43,9 @@ $container-gutter: 1.75rem;
     @include fontScale(1rem, 16 / 13, 10, 1);
 }
 
-* {
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
 
