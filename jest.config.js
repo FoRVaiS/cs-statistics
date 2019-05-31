@@ -12,8 +12,8 @@ module.exports = {
     verbose: true,
     moduleNameMapper: {
         '\\.s?css$': 'identity-obj-proxy',
-        'generated/(.*)': '<rootDir>/src/__generated__/$1',
-        'utilities/(.*)': '<rootDir>/src/utilities/$1',
+        '^generated/(.*)': '<rootDir>/src/__generated__/$1',
+        '^utilities/(.*)': '<rootDir>/src/utilities/$1',
     },
     snapshotResolver: './jest.snapshot',
 };
