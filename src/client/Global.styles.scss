@@ -1,3 +1,5 @@
+@import './util.scss';
+
 $theme-background: #08081A;
 
 $theme-primary: #FF9900;
@@ -27,6 +29,8 @@ $container-gutter: 1.75rem;
     --theme-interact--disabled: #{$theme-text--dark};
 
     --utility-container-gutter: #{$container-gutter};
+
+    @include fontScale(1rem, 16 / 13, 10, 1);
 }
 
 * {

@@ -1,0 +1,24 @@
+@function pow($value, $length) {
+    $result: 1;
+
+    @if ($length > 0) {
+        @for $i from 1 through $length {
+            $result: $result * $value;
+        }
+    }
+
+    @return $result;
+}
+
+@mixin fontScale($initialValue, $scale, $length, $offset: 0) {
+    $value: $initialValue / pow($scale, $offset);
+
+    --font-scale: #{$scale};
+    @for $i from 1 through $length {
+        @if ($i == 1) {
+            --font-size-#{$i}: #{$value};
+        } @else {
+            --font-size-#{$i}: calc(var(--font-size-#{$i - 1}) * var(--font-scale));
+        }
+    }
+}
