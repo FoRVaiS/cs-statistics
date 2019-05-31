@@ -13,6 +13,16 @@ $theme-fail: #B40000;
 
 $container-gutter: 1.75rem;
 
+@font-face {
+    font-family: Roboto, sans-serif;
+    src: url(../../resources/fonts/Roboto/Roboto-Regular.ttf);
+}
+
+@font-face {
+    font-family: Dosis, sans-serif;
+    src: url(../../resources/fonts/Dosis/Dosis-Regular.ttf);
+}
+
 :root {
     --theme-background: #{$theme-background};
 

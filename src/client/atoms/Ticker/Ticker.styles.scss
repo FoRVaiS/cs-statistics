@@ -1,13 +1,3 @@
-@font-face {
-    font-family: Dosis;
-    src: url(../../resources/fonts/Dosis/Dosis-Regular.ttf);
-}
-
-@font-face {
-    font-family: Roboto;
-    src: url(../../resources/fonts/Roboto/Roboto-Regular.ttf);
-}
-
 .ticker {
     /* TITLE */
     &[data-title]::before {
