@@ -2,11 +2,15 @@
     display: grid;
 
     &__head {
-        font-size: 1.25rem;
+        font-size: var(--font-size-3);
 
         padding-bottom: 0.25rem;
 
         border-bottom: 1px solid #CCCCCC;
+    }
+
+    &__item {
+        font-size: var(--font-size-1);
     }
 
     &__row {
