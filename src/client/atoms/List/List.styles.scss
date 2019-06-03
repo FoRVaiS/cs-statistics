@@ -1,6 +1,9 @@
 .list {
     &__row {
-        display: flex;
+        display: grid;
+
+        grid-auto-flow: column;
+        grid-auto-columns: 1fr;
 
         padding: 0.25rem;
 
@@ -21,10 +24,5 @@
 
     &__category {
         white-space: nowrap;
-    }
-
-    &__item,
-    &__category {
-        flex: 1;
     }
 }
