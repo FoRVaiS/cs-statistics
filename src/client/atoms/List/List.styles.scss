@@ -16,8 +16,10 @@
         &--body {
             font-size: var(--font-size-1);
 
+            background-color: var(--list__row-p-background-color);
+
             &:nth-child(odd) {
-                background-color: rgba(white, 0.1);
+                background-color: var(--list__row-p-background-color, rgba(white, 0.1));
             }
         }
     }
