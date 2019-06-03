@@ -8,7 +8,7 @@ const List: React.FC<{
 }> = ({ categories, data }): React.ReactElement => (
     <div className="list">
         <div className="list__head">
-            <div className="list__row">
+            <div className="list__row list__row--head">
                 {categories.map((category, index): any => <span className="list__category" key={`list-category-${index}`}>{category}</span>)}
             </div>
         </div>
@@ -27,7 +27,7 @@ const List: React.FC<{
                 }
 
                 return (
-                    <div className="list__row" key={`list-row-${rowIndex}`}>
+                    <div className="list__row list__row--body" key={`list-row-${rowIndex}`}>
                         {categories.map((category, itemIndex): any => (
                             <span className={`list__item list__item--${category.toLowerCase().replace(/\W+/g, '-')}`} key={`list-row-${rowIndex}-item-${itemIndex}`}>{cellData[category]}</span>
                         ))}

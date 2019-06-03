@@ -17,14 +17,16 @@
         display: flex;
 
         padding: 0.25rem;
-    }
 
-    &__head > &__row {
-        padding-bottom: 0;
-    }
+        &--head {
+            padding-bottom: 0;
+        }
 
-    &__body > &__row:nth-child(odd) {
-        background-color: rgba(white, 0.1);
+        &--body {
+            &:nth-child(odd) {
+                background-color: rgba(white, 0.1);
+            }
+        }
     }
 
     &__category {
