@@ -4,7 +4,7 @@
         $spacer-gap: 0.3rem;
 
         // Lower and darken title to draw attention to value
-        font-size: 0.88rem; // match height to the droop/overhang of '1' '2' '3' '6' '7' on Dosis-Regular font
+        font-size: var(--font-size-1); // match height to the droop/overhang of '1' '2' '3' '6' '7' on Dosis-Regular font
         color: var(--theme-text--dark);
 
         content: attr(data-title);
@@ -19,7 +19,7 @@
     display: inline; // p tags are 'block' by default and take too much space
 
     font-family: Dosis, 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 1.2rem; // Enlarge number because users care about this number
+    font-size: var(--font-size-3); // Enlarge number because users care about this number
 
     letter-spacing: 1px;
     line-height: 100%;
