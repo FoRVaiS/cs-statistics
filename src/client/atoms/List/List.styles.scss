@@ -1,14 +1,6 @@
 .list {
     display: grid;
 
-    &__head {
-        font-size: var(--font-size-3);
-
-        padding-bottom: 0.25rem;
-
-        border-bottom: 1px solid #CCCCCC;
-    }
-
     &__item {
         font-size: var(--font-size-1);
     }
@@ -19,7 +11,9 @@
         padding: 0.25rem;
 
         &--head {
-            padding-bottom: 0;
+            font-size: var(--font-size-3);
+
+            border-bottom: 1px solid #CCCCCC;
         }
 
         &--body {
