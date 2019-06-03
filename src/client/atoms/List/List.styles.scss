@@ -1,38 +1,28 @@
 .list {
-    display: grid;
-
-    &__head {
-        font-size: var(--font-size-3);
-
-        padding-bottom: 0.25rem;
-
-        border-bottom: 1px solid #CCCCCC;
-    }
-
-    &__item {
-        font-size: var(--font-size-1);
-    }
-
     &__row {
-        display: flex;
+        display: grid;
+
+        grid-auto-flow: column;
+        grid-auto-columns: 1fr;
 
         padding: 0.25rem;
-    }
 
-    &__head > &__row {
-        padding-bottom: 0;
-    }
+        &--head {
+            font-size: var(--font-size-3);
 
-    &__body > &__row:nth-child(odd) {
-        background-color: rgba(white, 0.1);
+            border-bottom: 1px solid #CCCCCC;
+        }
+
+        &--body {
+            font-size: var(--font-size-1);
+
+            &:nth-child(odd) {
+                background-color: rgba(white, 0.1);
+            }
+        }
     }
 
     &__category {
         white-space: nowrap;
-    }
-
-    &__item,
-    &__category {
-        flex: 1;
     }
 }
