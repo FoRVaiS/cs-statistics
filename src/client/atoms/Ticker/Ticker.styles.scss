@@ -1,16 +1,11 @@
 .ticker {
     &[data-title]::before {
-        $spacer-gap: 0.3rem;
-
         display: block;
 
         font-size: var(--font-size-1);
         color: var(--theme-text--dark);
 
         content: attr(data-title);
-
-        margin-right: $spacer-gap;
-        letter-spacing: 0px;
 
         letter-spacing: 2px;
         text-transform: uppercase;
