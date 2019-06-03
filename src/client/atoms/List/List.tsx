@@ -29,7 +29,7 @@ const List: React.FC<{
                 return (
                     <div className="list__row" key={`list-row-${rowIndex}`}>
                         {categories.map((category, itemIndex): any => (
-                            <span className="list__item" key={`list-row-${rowIndex}-item-${itemIndex}`}>{cellData[category]}</span>
+                            <span className={`list__item list__item--${category.toLowerCase().replace(/\W+/g, '-')}`} key={`list-row-${rowIndex}-item-${itemIndex}`}>{cellData[category]}</span>
                         ))}
                     </div>
                 );
