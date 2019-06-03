@@ -3,6 +3,8 @@
     &[data-title]::before {
         $spacer-gap: 0.3rem;
 
+        display: block;
+
         // Lower and darken title to draw attention to value
         font-size: var(--font-size-1); // match height to the droop/overhang of '1' '2' '3' '6' '7' on Dosis-Regular font
         color: var(--theme-text--dark);
