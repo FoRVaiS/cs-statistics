@@ -124,6 +124,16 @@
   },
   "homepage": "https://github.com/FoRVaiS/cs-statistics#readme",
   "license": "MIT",
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "eslint --fix",
+      "git add"
+    ],
+    "*.{css,scss}": [
+      "stylelint --fix",
+      "git add"
+    ]
+  },
   "main": "./built/server/server.js",
   "repository": {
     "type": "git",
