@@ -80,7 +80,7 @@
     "compression-webpack-plugin": "^2.0.0",
     "cross-env": "^5.2.0",
     "css-loader": "^2.1.1",
-    "cz-conventional-changelog": "^2.1.0",
+    "cz-conventional-changelog": "git://github.com/commitizen/cz-conventional-changelog.git#3398c02207b42133691dac8be21257ee28a0ac4c",
     "dotenv": "^7.0.0",
     "eslint": "^5.16.0",
     "eslint-config-airbnb": "^17.1.0",
