@@ -1,0 +1,16 @@
+.status-page {
+    display: grid;
+    grid-gap: 2rem;
+
+    margin-top: 2rem;
+
+    place-items: center center;
+
+    &__header {
+        font-size: var(--font-size-6);
+    }
+
+    &__msg {
+        font-size: var(--font-size-4);
+    }
+}
