@@ -96,6 +96,7 @@
     "jest": "^24.7.1",
     "jest-dom": "^3.1.3",
     "jest-extended": "^0.11.1",
+    "lint-staged": "^8.2.1",
     "mini-css-extract-plugin": "^0.6.0",
     "node-sass": "^4.12.0",
     "portfinder": "^1.0.20",
@@ -123,6 +124,16 @@
   },
   "homepage": "https://github.com/FoRVaiS/cs-statistics#readme",
   "license": "MIT",
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "eslint --fix",
+      "git add"
+    ],
+    "*.{css,scss}": [
+      "stylelint --fix",
+      "git add"
+    ]
+  },
   "main": "./built/server/server.js",
   "repository": {
     "type": "git",
@@ -134,9 +145,8 @@
     "_TMPL:start": "node -r dotenv/config .",
     "build:prod": "npm run _TMPL:build && webpack --config webpack.prod.js",
     "clean": "rimraf built/ dist/ src/__generated__/",
-    "commit": "npm run lint && git-cz",
+    "commit": "lint-staged && git-cz",
     "gen:gql": "graphql-codegen --config codegen.yml",
-    "lint": "eslint --ext .ts --ext .tsx src --fix && stylelint src/client",
     "start": "npm run _TMPL:build && cross-env NODE_ENV=development npm run _TMPL:start",
     "start:prod": "npm run build:prod && cross-env NODE_ENV=production npm run _TMPL:start",
     "storybook": "cross-env IS_STORYBOOK=true start-storybook -c .storybook",
