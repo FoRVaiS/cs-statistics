@@ -6,5 +6,5 @@
     "outDir": "../../built",
   },
   "include": [".", "../utilities"],
-  "exclude": ["**/*.test.tsx", "**/*.snap.tsx"]
+  "exclude": ["**/*.test.tsx", "**/*.snap.tsx", "**/*.stories.tsx"]
 }
