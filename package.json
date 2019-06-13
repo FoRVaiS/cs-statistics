@@ -147,7 +147,6 @@
     "clean": "rimraf built/ dist/ src/__generated__/",
     "commit": "lint-staged && git-cz",
     "gen:gql": "graphql-codegen --config codegen.yml",
-    "lint": "eslint --ext .ts --ext .tsx src --fix && stylelint src/client",
     "start": "npm run _TMPL:build && cross-env NODE_ENV=development npm run _TMPL:start",
     "start:prod": "npm run build:prod && cross-env NODE_ENV=production npm run _TMPL:start",
     "storybook": "cross-env IS_STORYBOOK=true start-storybook -c .storybook",
