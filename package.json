@@ -126,6 +126,11 @@
     "webpack-merge": "^4.2.1"
   },
   "homepage": "https://github.com/FoRVaiS/cs-statistics#readme",
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
   "license": "MIT",
   "lint-staged": {
     "*.{ts,tsx}": [
