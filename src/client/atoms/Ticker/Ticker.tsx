@@ -4,17 +4,17 @@ import './Ticker.styles.scss';
 
 const Ticker: React.FC<{
     title: string
-    value: number | string
+    children: number | string
     unit?: {
         position: 'left' | 'right'
         symbol: string
     }
-}> = ({ title, value, unit = { position: 'left', symbol: '' } }): React.ReactElement => (
+}> = ({ title, children, unit = { position: 'left', symbol: '' } }): React.ReactElement => (
     <p className="ticker" data-title={title}>
         {
             unit.position === 'left'
-                ? unit.symbol + value
-                : value + unit.symbol
+                ? unit.symbol + children
+                : children + unit.symbol
         }
     </p>
 );

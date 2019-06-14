@@ -8,7 +8,7 @@ afterEach(cleanup);
 
 describe('The title', (): any => {
     it('should populate data-title when ticker is given a title', async (): Promise<any> => {
-        const { container } = render(<Ticker title="MyTitle" value={0} />);
+        const { container } = render(<Ticker title="MyTitle">0</Ticker>);
 
         const ticker = await container.querySelector('.ticker');
 
@@ -18,7 +18,7 @@ describe('The title', (): any => {
 
 describe('The value', (): any => {
     it('should display when ticker is given a value', async (): Promise<any> => {
-        const { container } = render(<Ticker title="" value={1234567890} />);
+        const { container } = render(<Ticker title="">1234567890</Ticker>);
 
         const ticker = await container.querySelector('.ticker');
 
@@ -30,7 +30,7 @@ describe('The value unit', (): any => {
     describe('when given a symbol', (): any => {
         describe('and a position of right', (): any => {
             it('should display to the right value', async (): Promise<any> => {
-                const { container } = render(<Ticker title="" value={1234567890} unit={{ position: 'right', symbol: '%' }} />);
+                const { container } = render(<Ticker title="" unit={{ position: 'right', symbol: '%' }}>1234567890</Ticker>);
 
                 const ticker = await container.querySelector('.ticker');
 
@@ -40,7 +40,7 @@ describe('The value unit', (): any => {
 
         describe('and a position of left', (): any => {
             it('should display to the left value', async (): Promise<any> => {
-                const { container } = render(<Ticker title="" value={1234567890} unit={{ position: 'left', symbol: '$' }} />);
+                const { container } = render(<Ticker title="" unit={{ position: 'left', symbol: '$' }}>1234567890</Ticker>);
 
                 const ticker = await container.querySelector('.ticker');
 

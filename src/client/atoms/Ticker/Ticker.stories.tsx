@@ -10,13 +10,17 @@ import Ticker from './Ticker';
 storiesOf('Atoms|Ticker', module)
     .addDecorator(withKnobs)
     .add('renders a value with text describing the value', (): any => (
-        <Ticker title={text('Title', 'Title')} value={text('Value', '1234657890')} />
+        <Ticker title={text('Title', 'Title')}>
+            {text('Value', '1234657890')}
+        </Ticker>
     ))
     .add('can display unit symbols next to the value', (): any => {
         const pSymbol: string = text('Symbol', '$');
         const pPosition: 'left' | 'right' = radios('Position', { Left: 'left', Right: 'right' }, 'left');
 
         return (
-            <Ticker title="Value" value={12} unit={{ position: pPosition, symbol: pSymbol }} />
+            <Ticker title="Value" unit={{ position: pPosition, symbol: pSymbol }}>
+                12
+            </Ticker>
         );
     });
