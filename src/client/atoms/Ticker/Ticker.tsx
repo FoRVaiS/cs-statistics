@@ -4,7 +4,7 @@ import './Ticker.styles.scss';
 
 const Ticker: React.FC<{
     title: string
-    children: number | string
+    children: React.ReactElement
     unit?: {
         position: 'left' | 'right'
         symbol: string
