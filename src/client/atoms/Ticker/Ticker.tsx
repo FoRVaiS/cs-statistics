@@ -9,13 +9,9 @@ const Ticker: React.FC<{
         position: 'left' | 'right'
         symbol: string
     }
-}> = ({ title, children, unit = { position: 'left', symbol: '' } }): React.ReactElement => (
+}> = ({ title, children }): React.ReactElement => (
     <p className="ticker" data-title={title}>
-        {
-            unit.position === 'left'
-                ? unit.symbol + children
-                : children + unit.symbol
-        }
+        {children}
     </p>
 );
 
