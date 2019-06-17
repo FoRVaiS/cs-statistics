@@ -9,10 +9,14 @@ const Ticker: React.FC<{
         position: 'left' | 'right'
         symbol: string
     }
-}> = ({ title, children }): React.ReactElement => (
-    <p className="ticker" data-title={title}>
-        {children}
-    </p>
-);
+}> = ({ title, children }): React.ReactElement => React.cloneElement(children, {
+    className: [
+        'ticker',
+        children.props.className,
+    ]
+        .filter((className): any => typeof className !== 'undefined' && className !== null && className !== '')
+        .join(' '),
+    'data-title': title,
+});
 
 export default Ticker;
