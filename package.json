@@ -160,5 +160,9 @@
     "storybook": "cross-env IS_STORYBOOK=true start-storybook -c .storybook",
     "test": "jest",
     "test:watch": "jest --watchAll"
+  },
+  "engines": {
+    "node": ">=10.15.3",
+    "npm": ">=6.4.1"
   }
 }
