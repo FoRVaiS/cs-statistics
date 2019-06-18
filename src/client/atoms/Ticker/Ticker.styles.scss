@@ -1,21 +1,41 @@
 .ticker {
-    &[data-title]::before {
-        display: block;
+    &__content {
+        display: inline-flex;
 
-        font-size: var(--font-size-1);
-        color: var(--theme-text--dark);
+        flex-direction: column;
 
-        content: attr(data-title);
+        &[data-title]::before {
+            display: block;
 
-        letter-spacing: 2px;
-        text-transform: uppercase;
+            font-size: var(--font-size-1);
+            color: var(--theme-text--dark);
+
+            content: attr(data-title);
+
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        &::after {
+            content: '';
+
+            display: block;
+
+            margin-top: 0.25rem;
+
+            border: #{1 / 16 * 1rem} solid var(--color, var(--theme-text--dark));
+            border-radius: 1rem;
+
+            transition: 100ms;
+            transform: translateX(var(--ticker__content--underline-p-position, -100%));
+        }
+
+        &:hover {
+            --ticker__content--underline-p-position: 0;
+        }
+
+        font-size: var(--font-size-3);
+
+        line-height: 100%;
     }
-
-    display: inline;
-
-    font-family: Dosis, 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: var(--font-size-3);
-
-    letter-spacing: 1px;
-    line-height: 100%;
 }

@@ -4,19 +4,23 @@ import './Ticker.styles.scss';
 
 const Ticker: React.FC<{
     title: string
-    value: number | string
+    children: React.ReactElement
     unit?: {
         position: 'left' | 'right'
         symbol: string
     }
-}> = ({ title, value, unit = { position: 'left', symbol: '' } }): React.ReactElement => (
-    <p className="ticker" data-title={title}>
-        {
-            unit.position === 'left'
-                ? unit.symbol + value
-                : value + unit.symbol
-        }
-    </p>
+}> = ({ title, children }): React.ReactElement => (
+    <span className="ticker">
+        {React.cloneElement(children, {
+            className: [
+                'ticker__content',
+                children.props.className,
+            ]
+                .filter((className): any => typeof className !== 'undefined' && className !== null && className !== '')
+                .join(' '),
+            'data-title': title,
+        })}
+    </span>
 );
 
 export default Ticker;
