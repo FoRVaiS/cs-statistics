@@ -25,8 +25,8 @@ $container-gutter: 1.75rem;
     --theme-success: #{$theme-success};
     --theme-fail: #{$theme-fail};
 
-    --theme-interact: #{$theme-primary};
-    --theme-interact--disabled: #{$theme-text--dark};
+    --theme-interact: #{$theme-interact};
+    --theme-interact--disabled: #{$theme-interact--disable};
 
     --utility-container-gutter: #{$container-gutter};
 
