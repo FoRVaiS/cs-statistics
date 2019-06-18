@@ -1,15 +1,5 @@
-@import './util.scss';
-
-$theme-background: #08081A;
-
-$theme-primary: #FF9900;
-$theme-secondary: complement($theme-primary);
-
-$theme-text: #E8E8E8;
-$theme-text--dark: #7A7A7A;
-
-$theme-success: #00C800;
-$theme-fail: #B40000;
+@import './partials/css/util.scss';
+@import './partials/css/theme.scss';
 
 $container-gutter: 1.75rem;
 
@@ -35,8 +25,8 @@ $container-gutter: 1.75rem;
     --theme-success: #{$theme-success};
     --theme-fail: #{$theme-fail};
 
-    --theme-interact: #{$theme-primary};
-    --theme-interact--disabled: #{$theme-text--dark};
+    --theme-interact: #{$theme-interact};
+    --theme-interact--disabled: #{$theme-interact--disabled};
 
     --utility-container-gutter: #{$container-gutter};
 

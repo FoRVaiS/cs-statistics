@@ -1,0 +1,13 @@
+$theme-background: #08081A;
+
+$theme-primary: #FF9900;
+$theme-secondary: complement($theme-primary);
+
+$theme-text: #E8E8E8;
+$theme-text--dark: #7A7A7A;
+
+$theme-success: #00C800;
+$theme-fail: #B40000;
+
+$theme-interact: $theme-primary;
+$theme-interact--disabled: $theme-text--dark;
