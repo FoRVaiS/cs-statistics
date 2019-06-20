@@ -10,9 +10,9 @@ import { InMemoryCache } from 'apollo-cache-inmemory';
 import 'normalize.css';
 import './Global.styles.scss';
 
-import Home from './pages/Home/Home';
+import { Home } from './pages/Home';
 
-import NotFound from './pages/StatusPages/404';
+import { NotFound } from './pages/StatusPages';
 
 const client = new ApolloClient({
     link: new HttpLink(),

@@ -2,7 +2,7 @@ import React from 'react';
 
 import { render, cleanup } from 'react-testing-library';
 
-import Portrait from './Portrait';
+import { Portrait } from './Portrait';
 
 afterEach(cleanup);
 

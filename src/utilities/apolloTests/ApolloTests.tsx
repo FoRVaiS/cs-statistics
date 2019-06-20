@@ -14,7 +14,7 @@ const createClient = (mocks: MockedResponse[]): any => new ApolloClient({
 
 const waitForNextTick = (): Promise<void> => new Promise((res): any => setTimeout(res, 0));
 
-export default async (mocks: MockedResponse[], component: JSX.Element): Promise<RenderResult> => {
+export const renderHooks = async (mocks: MockedResponse[], component: JSX.Element): Promise<RenderResult> => {
     const container = render(
         <ApolloProvider client={createClient(mocks)}>
             {component}

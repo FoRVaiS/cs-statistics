@@ -12,8 +12,8 @@ import mongoose from 'mongoose';
 import isdev from 'isdev';
 import chalk from 'chalk';
 
-import HMR from './components/webpack/HotModuleReplacement';
-import logger from '../utilities/logger/logger';
+import { HotModuleReplacement as HMR } from './components/webpack/HotModuleReplacement';
+import { logger } from '../utilities/logger';
 import api from './api';
 
 const app: express.Express = express();

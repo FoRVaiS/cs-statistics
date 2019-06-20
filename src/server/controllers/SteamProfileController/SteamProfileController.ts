@@ -29,7 +29,7 @@ interface ISteamProfile {
     timecreated?: string
 }
 
-export default async (id: string): Promise<ISteamProfile> => {
+export const SteamProfileController = async (id: string): Promise<ISteamProfile> => {
     let steam64 = null;
 
     try {

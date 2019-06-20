@@ -1,8 +1,8 @@
 import React from 'react';
 
-import StatusPage from '../../templates/StatusPage/StatusPage';
+import { StatusPage } from '../../templates/StatusPage';
 
-const ServiceUnavailable: React.FC<{ msg: string }> = ({ msg }): React.ReactElement => (
+export const ServiceUnavailable: React.FC<{ msg: string }> = ({ msg }): React.ReactElement => (
     <StatusPage
         error={{
             code: 503,
@@ -11,5 +11,3 @@ const ServiceUnavailable: React.FC<{ msg: string }> = ({ msg }): React.ReactElem
         msg={msg}
     />
 );
-
-export default ServiceUnavailable;

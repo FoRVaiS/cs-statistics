@@ -1,6 +1,6 @@
 import { mergeSchemas } from 'graphql-tools';
 
-import SteamProfile from './SteamProfile/SteamProfile';
+import { SteamProfileSchema as SteamProfile } from './SteamProfile';
 
 export default mergeSchemas({
     schemas: [

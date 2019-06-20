@@ -2,7 +2,7 @@ import React from 'react';
 
 import './StatusPage.styles.scss';
 
-const StatusPage: React.FC<{
+export const StatusPage: React.FC<{
     error: {
         code: number
         text: string
@@ -17,5 +17,3 @@ const StatusPage: React.FC<{
         {msg && <p className="status-page__msg">{msg}</p>}
     </div>
 );
-
-export default StatusPage;

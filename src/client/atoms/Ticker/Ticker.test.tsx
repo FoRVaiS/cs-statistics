@@ -2,7 +2,7 @@ import React from 'react';
 
 import { render, cleanup } from 'react-testing-library';
 
-import Ticker from './Ticker';
+import { Ticker } from './Ticker';
 
 afterEach(cleanup);
 

@@ -3,7 +3,7 @@ import { makeExecutableSchema, ApolloError } from 'apollo-server-express';
 import { SteamProfile, QuerySteamProfileArgs } from 'generated/graphql/types-server';
 import isdev from 'isdev';
 
-import SteamProfileController from '../../controllers/SteamProfileController/SteamProfileController';
+import { SteamProfileController } from '../../controllers/SteamProfileController';
 
 import typeDefs from './SteamProfile.graphql';
 
@@ -15,7 +15,7 @@ class DevModeError extends ApolloError {
     }
 }
 
-export default makeExecutableSchema({
+export const SteamProfileSchema = makeExecutableSchema({
     typeDefs,
     resolvers: {
         Query: {
