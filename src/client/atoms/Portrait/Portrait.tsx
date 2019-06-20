@@ -3,7 +3,7 @@ import React from 'react';
 
 import './Portrait.styles.scss';
 
-const Portrait: React.FC<{
+export const Portrait: React.FC<{
     src: string
     name: string
 }> = ({ src, name }): React.ReactElement => (
@@ -12,5 +12,3 @@ const Portrait: React.FC<{
         <p className="portrait__name">{name}</p>
     </div>
 );
-
-export default Portrait;

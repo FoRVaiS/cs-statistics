@@ -10,7 +10,7 @@ interface IModelBase<TSchema> {
 }
 
 // eslint-disable-next-line arrow-parens
-export default <TSchema> (
+export const createModel = <TSchema> (
     collection: string,
     schema: TCustomSchema<TSchema>,
 ): (database: mongoose.Connection) => IModelBase<TSchema> => {

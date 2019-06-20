@@ -2,7 +2,7 @@ import React from 'react';
 
 import './Ticker.styles.scss';
 
-const Ticker: React.FC<{
+export const Ticker: React.FC<{
     title: string
     children: React.ReactElement
     unit?: {
@@ -22,5 +22,3 @@ const Ticker: React.FC<{
         })}
     </span>
 );
-
-export default Ticker;

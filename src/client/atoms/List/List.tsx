@@ -2,7 +2,7 @@ import React from 'react';
 
 import './List.styles.scss';
 
-const List: React.FC<{
+export const List: React.FC<{
     categories: string[]
     data: { [key: string]: number | string }[],
 }> = ({ categories, data }): React.ReactElement => (
@@ -33,5 +33,3 @@ const List: React.FC<{
         })}
     </div>
 );
-
-export default List;

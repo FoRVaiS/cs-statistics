@@ -2,7 +2,7 @@ import React from 'react';
 
 import StatusPage from '../../templates/StatusPage/StatusPage';
 
-const InternalServerError: React.FC<{ msg: string }> = ({ msg }): React.ReactElement => (
+export const InternalServerError: React.FC<{ msg: string }> = ({ msg }): React.ReactElement => (
     <StatusPage
         error={{
             code: 500,
@@ -11,5 +11,3 @@ const InternalServerError: React.FC<{ msg: string }> = ({ msg }): React.ReactEle
         msg={msg}
     />
 );
-
-export default InternalServerError;

@@ -8,7 +8,7 @@ import wpDevConfigFile from '../../../../webpack.dev';
 const wpDevConfig: webpack.Configuration = wpDevConfigFile;
 const compiler: webpack.Compiler = webpack(wpDevConfig);
 
-export default (app: express.Express): Promise<void> => new Promise((resolve): void => {
+export const HotModuleReplacement = (app: express.Express): Promise<void> => new Promise((resolve): void => {
     const { publicPath = '/' } = wpDevConfig.output || {};
 
     app.use(wpDevMiddleware(compiler, {

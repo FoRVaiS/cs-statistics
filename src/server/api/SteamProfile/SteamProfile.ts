@@ -15,7 +15,7 @@ class DevModeError extends ApolloError {
     }
 }
 
-export default makeExecutableSchema({
+export const SteamProfileSchema = makeExecutableSchema({
     typeDefs,
     resolvers: {
         Query: {
