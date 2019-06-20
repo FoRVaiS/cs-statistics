@@ -2,7 +2,6 @@
   "extends": "../../tsconfig.json",
   "compilerOptions": {
     "jsx": "preserve",
-    "outDir": "../../built",
   },
   "include": [".", "../shared", "../utilities"],
   "exclude": ["**/*.test.ts"]

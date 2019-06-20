@@ -152,7 +152,7 @@
     "_TMPL:build": "npm run clean && npm run gen:gql",
     "_TMPL:start": "ts-node -P src/server/tsconfig.json -r dotenv/config .",
     "build:prod": "npm run _TMPL:build && webpack --config webpack.prod.js",
-    "clean": "rimraf built/ dist/ src/__generated__/",
+    "clean": "rimraf dist/ src/__generated__/",
     "commit": "lint-staged && git-cz",
     "gen:gql": "graphql-codegen --config codegen.yml",
     "start": "npm run _TMPL:build && cross-env NODE_ENV=development npm run _TMPL:start",

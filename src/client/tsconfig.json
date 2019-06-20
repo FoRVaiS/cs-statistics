@@ -3,7 +3,6 @@
   "compilerOptions": {
     "jsx": "react",
     "sourceMap": true,
-    "outDir": "../../built",
   },
   "include": [".", "../utilities"],
   "exclude": ["**/*.test.tsx", "**/*.snap.tsx", "**/*.stories.tsx"]
