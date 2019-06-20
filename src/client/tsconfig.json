@@ -4,6 +4,9 @@
     "jsx": "react",
     "sourceMap": true,
   },
-  "include": [".", "../utilities"],
-  "exclude": ["**/*.test.tsx", "**/*.snap.tsx", "**/*.stories.tsx"]
+  "exclude": [
+    "**/*.test.tsx",
+    "**/*.snap.tsx",
+    "**/*.stories.tsx"
+  ]
 }

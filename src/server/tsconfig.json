@@ -3,6 +3,7 @@
   "compilerOptions": {
     "jsx": "preserve",
   },
-  "include": [".", "../shared", "../utilities"],
-  "exclude": ["**/*.test.ts"]
+  "exclude": [
+    "**/*.test.ts"
+  ]
 }
