@@ -1,6 +1,6 @@
 import React from 'react';
 
-import StatusPage from '../../templates/StatusPage/StatusPage';
+import { StatusPage } from '../../templates/StatusPage';
 
 export const Forbidden: React.FC<{ msg: string }> = ({ msg }): React.ReactElement => (
     <StatusPage

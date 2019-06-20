@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import SteamProfileController from './SteamProfileController';
+import { SteamProfileController } from './SteamProfileController';
 
 jest.mock('axios');
 
