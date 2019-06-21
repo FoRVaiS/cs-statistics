@@ -1,9 +1,15 @@
-@function pow($value, $length) {
+@function pow($base, $exponent) {
     $result: 1;
 
-    @if ($length > 0) {
-        @for $i from 1 through $length {
-            $result: $result * $value;
+    @if ($exponent > 0) {
+        @for $i from 1 through $exponent {
+            $result: $result * $base;
+        }
+    }
+
+    @if ($exponent < 0) {
+        @for $i from $exponent through -1 {
+            $result: $result / $base;
         }
     }
 
