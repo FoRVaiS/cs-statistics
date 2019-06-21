@@ -126,6 +126,10 @@
     "webpack-hot-middleware": "^2.24.4",
     "webpack-merge": "^4.2.1"
   },
+  "engines": {
+    "node": ">=10.15.3",
+    "npm": ">=6.4.1"
+  },
   "homepage": "https://github.com/FoRVaiS/cs-statistics#readme",
   "husky": {
     "hooks": {
@@ -155,14 +159,10 @@
     "clean": "rimraf dist/ src/__generated__/",
     "commit": "lint-staged && git-cz",
     "gen:gql": "graphql-codegen --config codegen.yml",
-    "start": "npm run _TMPL:build && cross-env NODE_ENV=development npm run _TMPL:start",
-    "start:prod": "npm run build:prod && cross-env NODE_ENV=production npm run _TMPL:start",
+    "start": "npm run build:prod && cross-env NODE_ENV=production npm run _TMPL:start",
+    "start:dev": "npm run _TMPL:build && cross-env NODE_ENV=development npm run _TMPL:start",
     "storybook": "cross-env IS_STORYBOOK=true start-storybook -c .storybook",
     "test": "jest",
     "test:watch": "jest --watchAll"
-  },
-  "engines": {
-    "node": ">=10.15.3",
-    "npm": ">=6.4.1"
   }
 }
