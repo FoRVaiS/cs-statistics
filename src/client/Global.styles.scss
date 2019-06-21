@@ -30,7 +30,7 @@ $container-gutter: 1.75rem;
 
     --utility-container-gutter: #{$container-gutter};
 
-    @include fontScale(1rem, 16 / 13, 10, 1);
+    @include generate-font-sizes(1rem, 16 / 13, 10, 1);
 }
 
 *,
