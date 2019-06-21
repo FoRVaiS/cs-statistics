@@ -5,7 +5,7 @@
         grid-auto-flow: column;
         grid-auto-columns: 1fr;
 
-        padding: var(--list__row-p-padding, 0.25rem);
+        padding: var(--list-row-spacing, 0.25rem);
 
         &--head {
             font-size: var(--font-size-3);
@@ -16,10 +16,10 @@
         &--body {
             font-size: var(--font-size-1);
 
-            background-color: var(--list__row-p-background-color);
+            background-color: var(--list-row-color);
 
             &:nth-child(odd) {
-                background-color: var(--list__row-p-background-color, rgba(white, 0.1));
+                background-color: var(--list-row-color, rgba(white, 0.1));
             }
         }
     }

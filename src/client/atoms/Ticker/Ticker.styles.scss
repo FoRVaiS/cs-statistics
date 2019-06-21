@@ -27,11 +27,11 @@
             border-radius: 1rem;
 
             transition: 100ms;
-            transform: translateX(var(--ticker__content--underline-p-position, -100%));
+            transform: translateX(var(--ticker-underline-pos, -100%));
         }
 
         &:hover {
-            --ticker__content--underline-p-position: 0;
+            --ticker-underline-pos: 0;
         }
 
         font-size: var(--font-size-3);

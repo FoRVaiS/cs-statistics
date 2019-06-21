@@ -4,21 +4,21 @@
     flex-direction: column;
     place-items: center center;
 
-    width: var(--portrait-p-width, 100%);
+    width: var(--portrait-width, 100%);
 
     &__img {
         object-fit: cover;
 
-        width: var(--portrait__img-p-width, 100%);
-        height: var(--portrait__img-p-width, 100%);
+        width: var(--portrait-img-width, 100%);
+        height: var(--portrait-img-width, 100%);
 
         border-radius: 50%;
     }
 
     &__name {
-        margin-top: var(--portrait-p-spacing, 1rem);
+        margin-top: var(--portrait-gap, 1rem);
 
-        font-size: var(--portrait__name-p-size, var(--font-size-5));
-        color: var(--portrait__name-p-color, var(--theme-text));
+        font-size: var(--portrait-name-size, var(--font-size-5));
+        color: var(--portrait-name-color, var(--theme-text));
     }
 }
