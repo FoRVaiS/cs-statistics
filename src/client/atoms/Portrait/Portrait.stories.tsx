@@ -3,7 +3,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withKnobs, text } from '@storybook/addon-knobs';
 
-import Portrait from './Portrait';
+import { Portrait } from './Portrait';
 
 storiesOf('Atoms|Portrait', module)
     .addDecorator(withKnobs)
