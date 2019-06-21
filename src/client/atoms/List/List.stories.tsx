@@ -2,7 +2,7 @@ import React from 'react';
 
 import { storiesOf } from '@storybook/react';
 
-import List from './List';
+import { List } from './List';
 
 const data = [
     {

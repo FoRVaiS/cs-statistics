@@ -3,7 +3,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withKnobs, text } from '@storybook/addon-knobs';
 
-import Ticker from './Ticker';
+import { Ticker } from './Ticker';
 
 storiesOf('Atoms|Ticker', module)
     .addDecorator(withKnobs)

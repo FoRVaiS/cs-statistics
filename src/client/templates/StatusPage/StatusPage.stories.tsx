@@ -3,7 +3,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withKnobs, number, text } from '@storybook/addon-knobs';
 
-import StatusPageTemplate from './StatusPage';
+import { StatusPage as StatusPageTemplate } from './StatusPage';
 
 storiesOf('Templates|Status Page', module)
     .addDecorator(withKnobs)
