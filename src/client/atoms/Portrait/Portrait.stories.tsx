@@ -12,7 +12,7 @@ storiesOf('Atoms|Portrait', module)
             margin: '0 auto',
             marginTop: '2rem',
             width: '11.5rem',
-            '--portrait__img__width': '75%',
+            '--portrait-img-width': '75%',
         }}
         >
             <Portrait
