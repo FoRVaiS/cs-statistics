@@ -17,13 +17,7 @@
 }
 
 @mixin fontScale($initialValue, $scale, $length, $offset: 0) {
-    $value: $initialValue / pow($scale, $offset);
-
     @for $i from 1 through $length {
-        @if ($i == 1) {
-            --font-size-#{$i}: #{$value};
-        } @else {
-            --font-size-#{$i}: calc(var(--font-size-#{$i - 1}) * var(--font-scale));
-        }
+        --font-size-#{$i}: #{$initialValue * pow($scale, ($offset * -1) + $i - 1)};
     }
 }
